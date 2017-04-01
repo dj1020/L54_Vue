@@ -20,8 +20,8 @@
         <li v-for="msg in messages" v-text="msg"></li>
     </ul>
 
-    <input id="msg" type="text" name="message" title="message"/>
-    <button id="addMsg">Add a Message</button>
+    <input id="msg" type="text" name="message" title="message" v-model="newMsg"/>
+    <button id="addMsg" v-on:click="addMsg">Add a Message</button>
 </div>
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
@@ -31,20 +31,19 @@
     var app = new Vue({
         el: '#root',
         data: {
+            newMsg: '',
             messages: [
                 "Hello world",
                 "Today is a good day",
                 "April showers bring May flowers"
             ]
         },
-        mounted: function () {
-            $('#addMsg').on('click', function () {
-                var msgInput = $('#msg');
 
-                app.messages.push(msgInput.val());
-
-                msgInput.val('');
-            });
+        methods: {
+            addMsg: function () {
+                this.messages.push(this.newMsg);
+                this.newMsg = '';
+            }
         }
     });
 </script>
