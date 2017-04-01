@@ -20,7 +20,8 @@
         <li v-for="msg in messages">@{{ msg }}</li>
     </ul>
 
-    <input type="text" name="message" title="message"/>
+    <input id="msg" type="text" name="message" title="message"/>
+    <button id="addMsg">Add a Message</button>
 </div>
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
@@ -35,11 +36,18 @@
         ]
     };
 
-    new Vue({
+    var app = new Vue({
         el: '#root',
         data: data
     });
 
+    $('#addMsg').on('click', function () {
+        var msgInput = $('#msg');
+
+        app.messages.push(msgInput.val());
+
+        msgInput.val('');
+    });
 </script>
 </body>
 </html>
