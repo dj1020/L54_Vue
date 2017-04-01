@@ -1,5 +1,9 @@
 Vue.component('task-list', {
-    template: '<ul><task v-for="task in tasks">{{ task.content }}</task></ul>',
+    template: `
+        <ul>
+            <task v-for="task in tasks">{{ task.content }}</task>
+        </ul>
+    `,
 
     data: function () {
         return {
