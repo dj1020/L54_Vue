@@ -16,6 +16,8 @@
 </head>
 <body>
 <div id="root">
+    <h1 v-bind:title="hint">Message List</h1>
+
     <ul class="message-list">
         <li v-for="msg in messages" v-text="msg"></li>
     </ul>
@@ -31,6 +33,7 @@
     var app = new Vue({
         el: '#root',
         data: {
+            hint: 'Here is the message list',
             newMsg: '',
             messages: [
                 "Hello world",
