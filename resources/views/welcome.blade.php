@@ -28,25 +28,24 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 <script>
-    var data = {
-        messages: [
-            "Hello world",
-            "Today is a good day",
-            "April showers bring May flowers"
-        ]
-    };
-
     var app = new Vue({
         el: '#root',
-        data: data
-    });
+        data: {
+            messages: [
+                "Hello world",
+                "Today is a good day",
+                "April showers bring May flowers"
+            ]
+        },
+        mounted: function () {
+            $('#addMsg').on('click', function () {
+                var msgInput = $('#msg');
 
-    $('#addMsg').on('click', function () {
-        var msgInput = $('#msg');
+                app.messages.push(msgInput.val());
 
-        app.messages.push(msgInput.val());
-
-        msgInput.val('');
+                msgInput.val('');
+            });
+        }
     });
 </script>
 </body>
