@@ -22,6 +22,14 @@
 
 <div id="root">
     <h1>Hi Component!</h1>
+
+    <task-list>
+        <task>Go to school</task>
+        <task>Go to 7-11</task>
+        <task>Go to the bank</task>
+        <task>Go home</task>
+    </task-list>
+
 </div>
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
