@@ -17,9 +17,13 @@
 <body>
 <div id="root">
     <h2>Message List</h2>
-
     <ul class="message-list">
         <li v-for="msg in messages" v-text="msg.content"></li>
+    </ul>
+
+    <h2>Incomplete Message List</h2>
+    <ul class="message-list">
+        <li v-for="msg in inCompletes" v-text="msg.content"></li>
     </ul>
 
     <input id="msg" type="text" name="message" title="message" v-model="newMsg"/>
@@ -42,6 +46,14 @@
                 {content: "Check if there are new videos", complete: true},
                 {content: "Meet Sara tomorrow morning", complete: false}
             ]
+        },
+
+        computed: {
+            inCompletes: function () {
+                return this.messages.filter(function(msg){
+                    return ! msg.complete;
+                });
+            }
         },
 
         methods: {
