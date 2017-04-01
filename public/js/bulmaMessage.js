@@ -1,7 +1,7 @@
 Vue.component('message', {
     props: ['title', 'description'],
     template: `
-        <article class="message">
+        <article class="message" v-show="isVisible">
             <div class="message-header">
                 <p>{{ title }}</p>
                 <button class="delete" @click="hideMessage"></button>
@@ -12,10 +12,15 @@ Vue.component('message', {
         </article>
     `,
 
+    data: function () {
+        return {
+            isVisible: true
+        }
+    },
+
     methods: {
         hideMessage: function () {
-            // Wrong way to think about, use data-oriented concept
-            $(this.$el).hide();
+            this.isVisible = false;
         }
     }
 });
