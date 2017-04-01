@@ -1,5 +1,5 @@
 Vue.component('task', {
-    template: '<li>Go to school</li>'
+    template: '<li><slot></slot></li>'
 });
 
 new Vue({
