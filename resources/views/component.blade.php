@@ -29,7 +29,7 @@
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/component.js"></script>
 
 </body>
 </html>
