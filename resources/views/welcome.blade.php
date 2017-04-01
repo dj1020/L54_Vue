@@ -15,6 +15,9 @@
         .color-red {
             color: red;
         }
+        .color-green {
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +52,8 @@
             addMsg: function () {
                 this.messages.push(this.newMsg);
                 this.newMsg = '';
+
+                this.titleClass = 'color-green';
             }
         }
     });
