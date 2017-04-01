@@ -22,7 +22,7 @@
 </head>
 <body>
 <div id="root">
-    <h1 v-bind:class="titleClass">Message List</h1>
+    <h1 :class="titleClass">Message List</h1>
 
     <ul class="message-list">
         <li v-for="msg in messages" v-text="msg"></li>
