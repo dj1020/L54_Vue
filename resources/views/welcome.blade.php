@@ -16,9 +16,11 @@
 </head>
 <body>
 <div id="root">
-    <input type="text" name="message" title="message" v-model="message"/>
+    <ul class="message-list">
+        <li>@{{ messages[1] }}</li>
+    </ul>
 
-    <p>Here is your message: <span id="msg">@{{ message }}</span></p>
+    <input type="text" name="message" title="message"/>
 </div>
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
@@ -26,7 +28,11 @@
 
 <script>
     var data = {
-        message: "Hello world"
+        messages: [
+            "Hello world",
+            "Today is a good day",
+            "April showers bring May flowers"
+        ]
     };
 
     new Vue({
@@ -34,18 +40,6 @@
         data: data
     });
 
-
-    //    $(function () {
-    //        var msgInput = $('input[name=message]');
-    //        var msgOutput = $('#msg');
-    //
-    //        msgInput.val(data.message);
-    //        msgOutput.text(data.message);
-    //        msgInput.on('change', function (e) {
-    //            data.message = msgInput.val();
-    //            msgOutput.text(data.message);
-    //        });
-    //    });
 </script>
 </body>
 </html>
