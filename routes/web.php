@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/component', function () {
     return view('component');
 });
+
+Route::get('/bulmaMessage', function () {
+    return view('bulmaMessage');
+});
