@@ -23,12 +23,12 @@
 <div id="root">
     <h1>Hi Component!</h1>
 
-    <task-list>
-        <task>Go to school</task>
-        <task>Go to 7-11</task>
-        <task>Go to the bank</task>
-        <task>Go home</task>
-    </task-list>
+    <task></task>
+
+    {{--<task>Go to school</task>--}}
+    {{--<task>Go to 7-11</task>--}}
+    {{--<task>Go to the bank</task>--}}
+    {{--<task>Go home</task>--}}
 
 </div>
 
