@@ -12,13 +12,22 @@
 
     <!-- Styles -->
     <style>
+        .complete {
+            color: #999;
+        }
+
+        .incomplete {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 <div id="root">
     <h2>Message List</h2>
     <ul class="message-list">
-        <li v-for="msg in messages" v-text="msg.content"></li>
+        <li v-for="msg in messages"
+            :class="{ complete: msg.complete, incomplete: !msg.complete }"
+            v-text="msg.content"></li>
     </ul>
 
     <h2>Incomplete Message List</h2>
