@@ -15,9 +15,11 @@
     </style>
 </head>
 <body>
-<input type="text" name="message" title="message"/>
+<div id="root">
+    <input type="text" name="message" title="message" v-model="message"/>
 
-<p>Here is your message: <span id="msg"></span></p>
+    <p>Here is your message: <span id="msg">@{{ message }}</span></p>
+</div>
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -27,17 +29,23 @@
         message: "Hello world"
     };
 
-    $(function () {
-        var msgInput = $('input[name=message]');
-        var msgOutput = $('#msg');
-
-        msgInput.val(data.message);
-        msgOutput.text(data.message);
-        msgInput.on('change', function (e) {
-            data.message = msgInput.val();
-            msgOutput.text(data.message);
-        });
+    new Vue({
+        el: '#root',
+        data: data
     });
+
+
+    //    $(function () {
+    //        var msgInput = $('input[name=message]');
+    //        var msgOutput = $('#msg');
+    //
+    //        msgInput.val(data.message);
+    //        msgOutput.text(data.message);
+    //        msgInput.on('change', function (e) {
+    //            data.message = msgInput.val();
+    //            msgOutput.text(data.message);
+    //        });
+    //    });
 </script>
 </body>
 </html>
