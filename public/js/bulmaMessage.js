@@ -14,7 +14,8 @@ Vue.component('message', {
 
     methods: {
         hideMessage: function () {
-            alert('hide');
+            // Wrong way to think about, use data-oriented concept
+            $(this.$el).hide();
         }
     }
 });
