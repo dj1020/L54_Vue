@@ -21,7 +21,7 @@
     </ul>
 
     <input id="msg" type="text" name="message" title="message" v-model="newMsg"/>
-    <button id="addMsg" v-on:click="addMsg">Add a Message</button>
+    <button id="addMsg" @click="addMsg">Add a Message</button>
 </div>
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
