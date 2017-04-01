@@ -12,20 +12,14 @@
 
     <!-- Styles -->
     <style>
-        .color-red {
-            color: red;
-        }
-        .color-green {
-            color: green;
-        }
     </style>
 </head>
 <body>
 <div id="root">
-    <h1 :class="{ 'color-red': true }">Message List</h1>
+    <h2>Message List</h2>
 
     <ul class="message-list">
-        <li v-for="msg in messages" v-text="msg"></li>
+        <li v-for="msg in messages" v-text="msg.content"></li>
     </ul>
 
     <input id="msg" type="text" name="message" title="message" v-model="newMsg"/>
@@ -39,13 +33,14 @@
     var app = new Vue({
         el: '#root',
         data: {
-            titleClass: 'color-red',
             newMsg: '',
             isSending: false,
             messages: [
-                "Hello world",
-                "Today is a good day",
-                "April showers bring May flowers"
+                {content: "Buy a milk from supermarket", complete: false},
+                {content: "Do my laundry", complete: true},
+                {content: "Have a lunch with Ken", complete: false},
+                {content: "Check if there are new videos", complete: true},
+                {content: "Meet Sara tomorrow morning", complete: false}
             ]
         },
 
