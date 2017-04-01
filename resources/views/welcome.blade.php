@@ -29,7 +29,7 @@
     </ul>
 
     <input id="msg" type="text" name="message" title="message" v-model="newMsg"/>
-    <button id="addMsg" @click="addMsg">Add a Message</button>
+    <button id="addMsg" @click="addMsg" :disabled="isSending">Add a Message</button>
 </div>
 
 <script src="https://unpkg.com/vue@2.2.6"></script>
@@ -41,6 +41,7 @@
         data: {
             titleClass: 'color-red',
             newMsg: '',
+            isSending: false,
             messages: [
                 "Hello world",
                 "Today is a good day",
@@ -54,6 +55,11 @@
                 this.newMsg = '';
 
                 this.titleClass = 'color-green';
+                this.isSending = true;
+
+                setTimeout(function () {
+                    this.isSending = false;
+                }.bind(this), 2000);
             }
         }
     });
