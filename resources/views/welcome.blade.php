@@ -12,11 +12,14 @@
 
     <!-- Styles -->
     <style>
+        .color-red {
+            color: red;
+        }
     </style>
 </head>
 <body>
 <div id="root">
-    <h1 v-bind:title="hint">Message List</h1>
+    <h1 v-bind:class="titleClass">Message List</h1>
 
     <ul class="message-list">
         <li v-for="msg in messages" v-text="msg"></li>
@@ -33,7 +36,7 @@
     var app = new Vue({
         el: '#root',
         data: {
-            hint: 'Here is the message list',
+            titleClass: 'color-red',
             newMsg: '',
             messages: [
                 "Hello world",
