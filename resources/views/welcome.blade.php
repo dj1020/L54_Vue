@@ -17,7 +17,7 @@
 <body>
 <div id="root">
     <ul class="message-list">
-        <li>@{{ messages[1] }}</li>
+        <li v-for="msg in messages">@{{ msg }}</li>
     </ul>
 
     <input type="text" name="message" title="message"/>
