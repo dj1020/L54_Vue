@@ -6,6 +6,8 @@ new Vue({
     },
 
     methods: {
-
+        onSubmit: function () {
+            alert('sumitting');
+        }
     }
 });

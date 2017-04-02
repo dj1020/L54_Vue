@@ -9,8 +9,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css"/>
     <style>
+        html, body {
+            height: 100%;
+        }
         body {
             padding-top: 40px;
+            background-color: #f8f8f8;
         }
     </style>
 </head>
@@ -19,19 +23,19 @@
 <div id="root" class="container">
     @include ('projects.list')
 
-    <form action="/projects" method="post">
+    <form action="/projects" method="post" @submit="onSubmit">
         {{ csrf_field() }}
         <div class="field">
             <label class="label">Project Name</label>
             <p class="control has-icon has-icon-right">
-                <input class="input" type="text" name="name" placeholder="Project Name">
+                <input class="input" type="text" name="name" placeholder="Project Name" v-model="name">
             </p>
             <p class="help is-danger"></p>
         </div>
         <div class="field">
             <label class="label">Project Description</label>
             <p class="control has-icon has-icon-right">
-                <input class="input" type="text" name="description" placeholder="Project Description">
+                <input class="input" type="text" name="description" placeholder="Project Description" v-model="description">
             </p>
             <p class="help is-danger"></p>
         </div>
