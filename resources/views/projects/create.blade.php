@@ -23,19 +23,19 @@
 <div id="root" class="container">
     @include ('projects.list')
 
-    <form action="/projects" method="post" @submit="onSubmit">
+    <form action="/projects" method="post" @submit.prevent="onSubmit">
         {{ csrf_field() }}
         <div class="field">
             <label class="label">Project Name</label>
             <p class="control has-icon has-icon-right">
-                <input class="input" type="text" name="name" placeholder="Project Name" v-model="name">
+                <input class="input" type="text" name="name" placeholder="Project Name" v-model="form.name">
             </p>
-            <p class="help is-danger"></p>
+            <p class="help is-danger" v-text=""></p>
         </div>
         <div class="field">
             <label class="label">Project Description</label>
             <p class="control has-icon has-icon-right">
-                <input class="input" type="text" name="description" placeholder="Project Description" v-model="description">
+                <input class="input" type="text" name="description" placeholder="Project Description" v-model="form.description">
             </p>
             <p class="help is-danger"></p>
         </div>
