@@ -22,3 +22,5 @@ Route::get('/component', function () {
 Route::get('/bulmaMessage', function () {
     return view('bulmaMessage');
 });
+
+Route::resource('projects', 'ProjectController');
