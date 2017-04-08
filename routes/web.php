@@ -24,3 +24,7 @@ Route::get('/bulmaMessage', function () {
 });
 
 Route::resource('projects', 'ProjectController');
+
+Route::get('elements', function () {
+    return view('elements');
+});
