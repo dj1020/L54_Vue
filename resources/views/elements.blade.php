@@ -10,24 +10,21 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <style>
-        .complete {
-            color: #999;
-        }
-
-        .incomplete {
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
 
-<div id="root">
+<div id="elements">
 
-    <h2>My Elements</h2>
+    <h2>@{{ title }}</h2>
 
 </div>
+
+<script>
+    window.Laravel = {!! json_encode([
+        'csrfToken' => csrf_token()
+    ]) !!};
+</script>
+<script src="/js/elements.js"></script>
 
 </body>
 </html>
