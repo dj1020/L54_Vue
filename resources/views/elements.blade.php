@@ -17,6 +17,8 @@
 
     <h2>@{{ title }}</h2>
 
+    <example></example>
+
 </div>
 
 <script>
