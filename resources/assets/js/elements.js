@@ -20,6 +20,7 @@ Vue.use(ElementUI);
 
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('ex-layout', require('./components/ExLayout.vue'));
+Vue.component('ex-datepicker', require('./components/ExDatePicker.vue'));
 
 const app = new Vue({
     el: '#elements',

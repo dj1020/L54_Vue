@@ -1,105 +1,54 @@
 <template>
     <div>
-        <el-row>
-            <el-col :span="24">
-                <div class="grid-content bg-purple-dark"></div>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="12">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :span="12">
-                <div class="grid-content bg-purple-light"></div>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="8">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :span="8">
-                <div class="grid-content bg-purple-light"></div>
-            </el-col>
-            <el-col :span="8">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="6">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :span="6">
-                <div class="grid-content bg-purple-light"></div>
-            </el-col>
-            <el-col :span="6">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :span="6">
-                <div class="grid-content bg-purple-light"></div>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="4">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :span="4">
-                <div class="grid-content bg-purple-light"></div>
-            </el-col>
-            <el-col :span="4">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :span="4">
-                <div class="grid-content bg-purple-light"></div>
-            </el-col>
-            <el-col :span="4">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :span="4">
-                <div class="grid-content bg-purple-light"></div>
-            </el-col>
-        </el-row>
+        <div class="block">
+            <span class="demonstration">Default</span>
+            <el-date-picker
+                v-model="value1"
+                type="date"
+                placeholder="Pick a day">
+            </el-date-picker>
+        </div>
+        <div class="block">
+            <span class="demonstration">Picker with quick options</span>
+            <el-date-picker
+                v-model="value2"
+                type="date"
+                placeholder="Pick a day"
+                :picker-options="pickerOptions1">
+            </el-date-picker>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Layout Component mounted.')
+        data() {
+            return {
+                pickerOptions1: {
+                    shortcuts: [{
+                        text: 'Today',
+                        onClick(picker) {
+                            picker.$emit('pick', new Date());
+                        }
+                    }, {
+                        text: 'Yesterday',
+                        onClick(picker) {
+                            const date = new Date();
+                            date.setTime(date.getTime() - 3600 * 1000 * 24);
+                            picker.$emit('pick', date);
+                        }
+                    }, {
+                        text: 'A week ago',
+                        onClick(picker) {
+                            const date = new Date();
+                            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', date);
+                        }
+                    }]
+                },
+                value1: '',
+                value2: '',
+            };
         }
-    }
+    };
 </script>
-
-<style type="scss">
-    .el-row {
-        margin-bottom: 20px;
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    .el-col {
-        border-radius: 4px;
-    }
-
-    .bg-purple-dark {
-        background: #99a9bf;
-    }
-
-    .bg-purple {
-        background: #d3dce6;
-    }
-
-    .bg-purple-light {
-        background: #e5e9f2;
-    }
-
-    .grid-content {
-        border-radius: 4px;
-        min-height: 36px;
-    }
-
-    .row-bg {
-        padding: 10px 0;
-        background-color: #f9fafc;
-    }
-</style>
