@@ -19,6 +19,6 @@ const app = new Vue({
     el: '#elements',
 
     data: {
-        title: "Hello Elements"
+        title: "Hello Elements~~"
     }
 });
