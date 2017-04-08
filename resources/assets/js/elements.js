@@ -13,7 +13,13 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-default/index.css';
+
+Vue.use(ElementUI);
+
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('ex-layout', require('./components/ExLayout.vue'));
 
 const app = new Vue({
     el: '#elements',

@@ -18,6 +18,7 @@
     <h2>@{{ title }}</h2>
 
     <example></example>
+    <ex-layout></ex-layout>
 
 </div>
 
