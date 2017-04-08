@@ -182,6 +182,10 @@ async-foreach@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
 
+async-validator@^1.6.6:
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/async-validator/-/async-validator-1.6.8.tgz#fbaaa9002b41066fdf3ba21d8a4ca8b1179ad36b"
+
 async@1.5.2, async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
@@ -337,6 +341,10 @@ babel-helper-replace-supers@^6.22.0, babel-helper-replace-supers@^6.23.0:
     babel-template "^6.23.0"
     babel-traverse "^6.23.0"
     babel-types "^6.23.0"
+
+babel-helper-vue-jsx-merge-props@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.2.tgz#aceb1c373588279e2755ea1cfd35c22394fd33f8"
 
 babel-helpers@^6.23.0:
   version "6.23.0"
@@ -1345,6 +1353,10 @@ deep-extend@~0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.1.tgz#efe4113d08085f4e6f9687759810f807469e2253"
 
+deepmerge@^1.2.0:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.3.2.tgz#1663691629d4dbfe364fa12a2a4f0aa86aa3a050"
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -1424,6 +1436,15 @@ ee-first@1.1.1:
 electron-to-chromium@^1.2.7:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.2.tgz#b8ce5c93b308db0e92f6d0435c46ddec8f6363ab"
+
+element-ui@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-1.2.8.tgz#aa95bde8ad550d17b23b2a73ae84cfa1f0c2635d"
+  dependencies:
+    async-validator "^1.6.6"
+    babel-helper-vue-jsx-merge-props "^2.0.0"
+    deepmerge "^1.2.0"
+    throttle-debounce "^1.0.1"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -4132,6 +4153,10 @@ tfunk@^3.0.1:
   dependencies:
     chalk "^1.1.1"
     object-path "^0.9.0"
+
+throttle-debounce@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-1.0.1.tgz#dad0fe130f9daf3719fdea33dc36a8e6ba7f30b5"
 
 through@~2.3.6:
   version "2.3.8"
