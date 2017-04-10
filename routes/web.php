@@ -28,3 +28,7 @@ Route::resource('projects', 'ProjectController');
 Route::get('elements', function () {
     return view('elements');
 });
+
+Route::post('submitSomewhere', function () {
+    return request()->all();
+});

@@ -21,6 +21,8 @@ Vue.use(ElementUI);
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('ex-layout', require('./components/ExLayout.vue'));
 Vue.component('ex-datepicker', require('./components/ExDatePicker.vue'));
+Vue.component('my-table', require('./components/ExMyTable.vue'));
+Vue.component('my-form', require('./components/ExMyForm.vue'));
 
 const app = new Vue({
     el: '#elements',

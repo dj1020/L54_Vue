@@ -17,17 +17,9 @@
 
     <h2>@{{ title }}</h2>
 
-    <example></example>
-    <ex-layout></ex-layout>
+    <hr/>
 
-    <i class="el-icon-edit"></i>
-    <i class="el-icon-share"></i>
-    <i class="el-icon-delete"></i>
-
-    <el-button type="primary" icon="search">Search</el-button>
-    <el-button type="primary">Upload<i class="el-icon-upload el-icon-right"></i></el-button>
-
-    <ex-datepicker></ex-datepicker>
+    <my-form></my-form>
 </div>
 
 <script>
