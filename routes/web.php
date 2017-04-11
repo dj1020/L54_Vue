@@ -32,3 +32,5 @@ Route::get('elements', function () {
 Route::post('submitSomewhere', function () {
     return request()->all();
 });
+
+Route::resource('menus', 'MenuController');
