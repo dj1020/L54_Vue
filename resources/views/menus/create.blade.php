@@ -26,7 +26,7 @@
                     <select class="form-control" name="parent_id">
                         <option value="">無</option>
                         @foreach ($menus as $menu)
-                            <option value="{{ $menu->id }}">{{ $menu->name }}</option>
+                            <option value="{{ $menu->id }}">{{ $menu->route() }}</option>
                         @endforeach
                     </select>
                 </div>
