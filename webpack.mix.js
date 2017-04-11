@@ -14,6 +14,7 @@ const {mix} = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/elements.js', 'public/js')
     .js('resources/assets/js/menus/index.js', 'public/js/menus')
+    .js('resources/assets/js/menus/create2.js', 'public/js/menus')
     .extract(['vue', 'jquery', 'axios', 'lodash'])
     .sass('resources/assets/sass/app.scss', 'public/css')
     .sass('resources/assets/sass/menus/create.scss', 'public/css/menus')

@@ -33,4 +33,5 @@ Route::post('submitSomewhere', function () {
     return request()->all();
 });
 
+Route::get('menus/create2', 'MenuController@create2');
 Route::resource('menus', 'MenuController');

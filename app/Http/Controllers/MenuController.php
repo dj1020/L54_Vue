@@ -42,6 +42,11 @@ class MenuController extends Controller
         return view('menus.create', compact('menus'));
     }
 
+    public function create2()
+    {
+        return view('menus.create2');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
