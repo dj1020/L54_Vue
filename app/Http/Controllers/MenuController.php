@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Menu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -34,7 +35,9 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $menu = Menu::create($request->all());
+
+        return redirect('/menus');
     }
 
     /**
