@@ -22,20 +22,16 @@
     export default {
         data() {
             return {
-                tableData: [{
-                    name: '2016-05-03',
-                    parent: 'Tom',
-                    route: 'No. 189, Grove St, Los Angeles'
-                },{
-                    name: '2016-05-03',
-                    parent: 'Tom',
-                    route: 'No. 189, Grove St, Los Angeles'
-                },{
-                    name: '2016-05-03',
-                    parent: 'Tom',
-                    route: 'No. 189, Grove St, Los Angeles'
-                }]
+                tableData: []
             };
+        },
+
+        mounted() {
+            axios.get('/menus').then((resp) => { // 如果不用 es6 arrow function 記得加 bind
+                let data = resp.data;
+                console.log(data);
+                this.tableData = data;
+            });
         }
     }
 </script>
