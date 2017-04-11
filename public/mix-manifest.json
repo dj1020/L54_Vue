@@ -1,7 +1,9 @@
 {
   "/js/elements.js": "/js/elements.js",
-  "/js/vendor.js": "/js/vendor.js",
+  "/js/menus/index.js": "/js/menus/index.js",
+  "/js/menus/vendor.js": "/js/menus/vendor.js",
   "/js/app.js": "/js/app.js",
   "/css/app.css": "/css/app.css",
-  "/js/manifest.js": "/js/manifest.js"
+  "/css/menus/create.css": "/css/menus/create.css",
+  "/js/menus/manifest.js": "/js/menus/manifest.js"
 }
