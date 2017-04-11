@@ -20,8 +20,6 @@
         'csrfToken' => csrf_token()
     ]) !!};
     </script>
-    <script src="/js/manifest.js"></script>
-    <script src="/js/vendor.js"></script>
     @yield('footer-js')
 </body>
 
