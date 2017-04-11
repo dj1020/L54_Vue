@@ -15,13 +15,16 @@ class MenuController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return response()->json([
-                [
-                    'name'   => '2016-05-03',
-                    'parent' => 'Tom',
-                    'route'  => 'No. 189, Grove St, Los Angeles',
-                ],
-            ]);
+
+            $menus = Menu::all()->map(function (Menu $menu) {
+                return [
+                    'name'   => $menu->name,
+                    'parent' => $menu->parentName,
+                    'route'  => $menu->route(),
+                ];
+            })->values()->toArray();
+
+            return response()->json($menus);
         }
 
         return view('menus.index');
@@ -34,7 +37,9 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menus.create');
+        $menus = Menu::all();
+
+        return view('menus.create', compact('menus'));
     }
 
     /**

@@ -25,8 +25,9 @@
                     <label for="selectParent">Select Parent</label>
                     <select class="form-control" name="parent_id">
                         <option value="">無</option>
-                        <option value="1">menu item 1</option>
-                        <option value="2">menu item 2</option>
+                        @foreach ($menus as $menu)
+                            <option value="{{ $menu->id }}">{{ $menu->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
