@@ -34,8 +34,16 @@ class MenuController extends Controller
     {
         // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
-        // 只有第一層對了，第二、第三層都沒有 id as value, name as label
+        // 看起來三層都正確了，但程式碼需要重構
         $menusData = Menu::with([
+            'children'          => function ($q) {
+                $q->select([
+                    'id',
+                    'id as value',
+                    'name as label',
+                    'parent_id',
+                ]);
+            },
             'children.children' => function ($q) {
                 $q->select([
                     'id',
