@@ -34,8 +34,12 @@ class MenuController extends Controller
     {
         // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
-        // 太多層 children 會是 empty array
-        $menusData = Menu::with('children.children.children')->get();
+        // Children 會找不到，因為沒有 id 和 parent_id 提供給 relation
+        $menusData = Menu::with('children.children')
+            ->get([
+                'id as value',
+                'name as label',
+            ]);
 
         return $menusData;
     }
