@@ -34,21 +34,23 @@ class MenuController extends Controller
     {
         // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
-        // 重構完畢，看一下 /menus/create2 發現選項多了許多不是 root element 的項目
+        // 結果看起正確，但因為有 children => [] 的關係，所以出現空目錄的情況
         $columns = [
             'id',
             'id as value',
             'name as label',
             'parent_id',
         ];
-        $menusData = Menu::with([
-            'children'          => function ($q) use ($columns) {
-                $q->select($columns);
-            },
-            'children.children' => function ($q) use ($columns) {
-                $q->select($columns);
-            },
-        ])->get($columns);
+        $menusData = Menu::where('parent_id', null)
+            ->with([
+                'children'          => function ($q) use ($columns) {
+                    $q->select($columns);
+                },
+                'children.children' => function ($q) use ($columns) {
+                    $q->select($columns);
+                },
+            ])
+            ->get($columns);
 
         return $menusData;
     }
