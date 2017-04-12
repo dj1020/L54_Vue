@@ -34,11 +34,13 @@ class MenuController extends Controller
     {
         // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
-        // Children 會找不到，因為沒有 id 和 parent_id 提供給 relation
+        // 只有第一層對了，第二、第三層都沒有 id as value, name as label
         $menusData = Menu::with('children.children')
             ->get([
+                'id',
                 'id as value',
                 'name as label',
+                'parent_id'
             ]);
 
         return $menusData;
