@@ -34,31 +34,21 @@ class MenuController extends Controller
     {
         // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
-        // 看起來三層都正確了，但程式碼需要重構
+        // 重構完畢，看一下 /menus/create2 發現選項多了許多不是 root element 的項目
+        $columns = [
+            'id',
+            'id as value',
+            'name as label',
+            'parent_id',
+        ];
         $menusData = Menu::with([
-            'children'          => function ($q) {
-                $q->select([
-                    'id',
-                    'id as value',
-                    'name as label',
-                    'parent_id',
-                ]);
+            'children'          => function ($q) use ($columns) {
+                $q->select($columns);
             },
-            'children.children' => function ($q) {
-                $q->select([
-                    'id',
-                    'id as value',
-                    'name as label',
-                    'parent_id',
-                ]);
+            'children.children' => function ($q) use ($columns) {
+                $q->select($columns);
             },
-        ])
-            ->get([
-                'id',
-                'id as value',
-                'name as label',
-                'parent_id',
-            ]);
+        ])->get($columns);
 
         return $menusData;
     }
