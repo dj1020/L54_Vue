@@ -11,8 +11,12 @@
             onChange(value) {
                 console.log(value);
                 console.log(value[value.length - 1]);
+
+                this.$emit('input', value[value.length - 1]);
             }
         },
+
+        props: ['value'],
 
         data() {
             return {

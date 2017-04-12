@@ -21,5 +21,11 @@ Vue.use(ElementUI);
 Vue.component('my-cascader', require('./components/myCascader.vue'));
 
 const app = new Vue({
-    el: '#root'
+    el: '#root',
+    data: {
+        form: {
+            name: '',
+            parent_id: ''
+        }
+    }
 });
