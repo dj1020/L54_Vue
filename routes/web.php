@@ -34,4 +34,5 @@ Route::post('submitSomewhere', function () {
 });
 
 Route::get('menus/create2', 'MenuController@create2');
+Route::get('menus/cascaderData', 'MenuController@cascaderData');
 Route::resource('menus', 'MenuController');

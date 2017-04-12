@@ -30,6 +30,13 @@ class MenuController extends Controller
         return view('menus.index');
     }
 
+    public function cascaderData()
+    {
+        $jsonData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
+
+        return $jsonData;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
