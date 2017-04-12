@@ -34,7 +34,8 @@ class MenuController extends Controller
     {
         // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
-        $menusData = Menu::with('children')->get();
+        // 如果確定 Menu 深度最多三層可以這樣寫
+        $menusData = Menu::with('children.children')->get();
 
         return $menusData;
     }
