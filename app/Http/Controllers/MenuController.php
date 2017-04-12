@@ -32,9 +32,11 @@ class MenuController extends Controller
 
     public function cascaderData()
     {
-        $jsonData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
+        // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
-        return $jsonData;
+        $menusData = Menu::with('children')->get();
+
+        return $menusData;
     }
 
     /**

@@ -22,6 +22,11 @@ class Menu extends Model
         return $this->belongsTo(Menu::class, 'parent_id');
     }
 
+    public function children()
+    {
+        return $this->hasMany(Menu::class, 'parent_id');
+    }
+
     public function route($separator = '/')
     {
         if ($this->parent instanceof Menu) {
