@@ -50,7 +50,10 @@ class MenuController extends Controller
                     $q->select($columns);
                 },
             ])
-            ->get($columns);
+            ->get($columns)
+            ->toArray();
+
+        $this->removeAllEmptyChildren($menusData);
 
         return $menusData;
     }
@@ -128,5 +131,18 @@ class MenuController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function removeAllEmptyChildren(&$items)
+    {
+        foreach ($items as $k => &$v) {
+            if (isset($v['children'])) {
+                if (empty($v['children'])) {
+                    unset($v['children']);
+                } elseif (is_array($v['children'])) {
+                    $this->removeAllEmptyChildren($v['children']);
+                }
+            }
+        }
     }
 }

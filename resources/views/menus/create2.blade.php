@@ -16,6 +16,10 @@
             min-width: 420px;
             margin-right: 20px;
         }
+        .el-input {
+            width: 50%;
+            margin-left: 20px;
+        }
         form > *, .el-button {
             margin-top: 15px;
         }
@@ -24,10 +28,13 @@
 
         <el-row :gutter="20">
             <el-col :offset="3" :span="18">
-                <h1>Create Menu 2 - Cascader</h1>
+                <h1>Create Product - Cascader</h1>
                 <form action="{{ route('menus.store') }}">
+                    <label for="">分類：</label>
                     <my-cascader v-model="form.parent_id"></my-cascader><span>Select Parent id: @{{ form.parent_id }}</span>
-                    <el-input size="large" placeholder="Menu name here ..." v-model="form.name"></el-input>
+                    <br/>
+                    <label class="lable-product" for="">產品名稱：</label>
+                    <el-input size="large" placeholder="Product name here ..." v-model="form.name"></el-input>
                     <el-button type="primary">建立</el-button>
                 </form>
             </el-col>
