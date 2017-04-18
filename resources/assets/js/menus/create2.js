@@ -12,20 +12,34 @@ require('../bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-default/index.css';
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-default/index.css";
 
 Vue.use(ElementUI);
 
-// Vue.component('three-level-select', require('./components/threeLevelSelect.vue'));
 Vue.component('my-cascader', require('./components/myCascader.vue'));
 
 const app = new Vue({
     el: '#root',
     data: {
+        action: '',
         form: {
             name: '',
-            parent_id: ''
+            category_id: ''
+        }
+    },
+    methods: {
+        onSubmit() {
+            console.log('post:', this.action);
+            axios.post(this.action, this.form)
+                .then(function (resp) {
+                    console.log(resp);
+
+                    this.form.name = '';
+                }.bind(this))
+                .catch(function (error) {
+                    console.log(error.response);
+                });
         }
     }
 });
