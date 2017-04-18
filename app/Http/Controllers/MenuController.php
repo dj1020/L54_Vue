@@ -30,7 +30,7 @@ class MenuController extends Controller
         return view('menus.index');
     }
 
-    public function cascaderData()
+    public function menuCascaderData()
     {
         // $menusData = json_decode(file_get_contents(storage_path('cascaderSampleData.json')), true);
 
@@ -68,11 +68,6 @@ class MenuController extends Controller
         $menus = Menu::all();
 
         return view('menus.create', compact('menus'));
-    }
-
-    public function create2()
-    {
-        return view('menus.create2');
     }
 
     /**

@@ -16,9 +16,8 @@
             min-width: 420px;
             margin-right: 20px;
         }
-        .el-input {
+        .lable-product + .el-input {
             width: 50%;
-            margin-left: 20px;
         }
         form > *, .el-button {
             margin-top: 15px;

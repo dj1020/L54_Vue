@@ -33,6 +33,7 @@ Route::post('submitSomewhere', function () {
     return request()->all();
 });
 
-Route::get('menus/create2', 'MenuController@create2');
-Route::get('menus/cascaderData', 'MenuController@cascaderData');
+Route::resource('products', 'ProductController');
+Route::get('menus/cascaderData', 'MenuController@menuCascaderData');
+
 Route::resource('menus', 'MenuController');
